@@ -1,73 +1,103 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>给呆妹</title>
-        <link type="text/css" rel="stylesheet" href="./file/default.css">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>给呆妹</title>
+    <link type="text/css" rel="stylesheet" href="./file/default.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hua+Wen+Xing+Kai&display=swap">
 
     <script type="text/javascript" src="./file/jquery.min.js"></script>
-		<script type="text/javascript" src="./file/jscex.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-parser.js"></script>
-		<script type="text/javascript" src="./file/jscex-jit.js"></script>
-		<script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-async.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
-		<script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
-		<script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./file/jscex.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-parser.js"></script>
+    <script type="text/javascript" src="./file/jscex-jit.js"></script>
+    <script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
+
     <style type="text/css">
  body {
   font-family: 'Lovers Quarrel', cursive;
 }
-  </style>
-<!--    <style>-->
-<!--    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');-->
-<!--    body {-->
-<!--        font-family: 'Lobster', cursive;-->
-<!--    }-->
-<!--}-->
-<!--</style>-->
+
+    </style>
+    <!--    <style>-->
+    <!--    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');-->
+    <!--    body {-->
+    <!--        font-family: 'Lobster', cursive;-->
+    <!--    }-->
+    <!--}-->
+    <!--</style>-->
 
 </head>
 </head>
-    <body>
-        <div id="main">
-            <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
-            <audio  autoplay height="100" width="100">
-                    <source src="bg1.mp3" type="audio/mp3" />
-                    <source src="renxi.mp3" type="audio/mp3" />
-                    不支持
-                    <embed height="100" width="100" src="bg1.mp3" />
-            </audio>
-            <div id="wrap">
-                <div id="text">
-                    <div id="code"> <font color="#000000" size="3.5"  >
-                        <span class="say">  张国荣说，爱情应该以一束花和正式的告白开始。如果感情稀里糊涂的开始，很可能以同样的方式结束。然而，我不擅长用言语包裹浪漫情感，因此，请允许我用这样的方式说出心意。</span><br>
-                      <span class="say">    过去的日子如同单调的方程，一切都是那样沉闷乏味，直到你这个变量出现，让这个方程充满了未知和可能。</span><br>
-                      <span class="say">    你总说我们相识时间不够长，尚未完全了解对方。但我认为更重要的是，两颗心是否愿为对方付出。</span><br>
-                      <span class="say">    在这段美好的时光里，我发现了你的活泼开朗，聆听了你的烦恼忧愁，感受到了你大大咧咧外表下那颗敏感的心。或许相识的时间还不够长，但每一个瞬间都让我更加确信，你是我生命中不可或缺的特别变数。</span><br>
-                        <span class="say">  “初见乍惊欢，久处亦怦然”。期待未来与你一同编织属于我们的回忆。</span><br>
+<body>
+<img id="music-button" src="file/music.png" alt="Music Icon" width="50" height="50">
 
-                      <span class="say"><span class="space"></span> -- 你的giegie</span> </font>
-                          <br />
-                          <br />
-                      </p>
-                    </div>
-                  </div>
-                <div id="clock-box">
-                    <span class="STYLE1"></span><font color="#FFA5F0"  >呆妹，我喜欢你</font>
-<span class="STYLE1">已经是……</span>
-                  <div id="clock"></div>
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
+<script>
+    var audio = new Audio('bg1.mp3'); // 替换为你的音频文件路径
+
+    var musicButton = document.getElementById('music-button');
+
+    musicButton.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+        musicButton.src = 'file/music.png'; // 替换为暂停状态的图标文件路径
+      } else {
+        audio.pause();
+        musicButton.src = 'file/music.png'; // 替换为播放状态的图标文件路径
+      }
+    });
+  </script>
+<div id="main">
+    <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a
+            href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a
+            href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。
+    </div>
+<!--    <audio autoplay height="100" width="100">-->
+<!--        <source src="bg1.mp3" type="audio/mp3"/>-->
+<!--        <source src="renxi.mp3" type="audio/mp3"/>-->
+<!--        不支持-->
+<!--        <embed height="100" width="100" src="bg1.mp3"/>-->
+<!--    </audio>-->
+    <div id="wrap">
+        <div id="text">
+            <div id="code"><font color="#000000" size="3.5">
+
+                <span class="say">  张国荣说，爱情应该以一束花和正式的告白开始。如果感情稀里糊涂的开始，很可能以同样的方式结束。然而，我不擅长用言语包裹浪漫情感，因此，请允许我用这样的方式说出心意。</span><br>
+                <span class="say">    111111111111111111111111111111111111111。</span><br>
+                <span class="say">    1111111111111111111111111111111111111111111111111111。</span><br>
+                <span class="say">    1111111111111111111111111111111111111111111111111111111111111</span><br>
+                <span class="say">  11111111111111111111111111111111111111111111</span><br>
+
+                <span class="say"><span class="space"></span> -- 你的giegie</span> </font>
+                <br/>
+                <br/>
+                </p>
+                <!--                <span class="say">  张国荣说，爱情应该以一束花和正式的告白开始。如果感情稀里糊涂的开始，很可能以同样的方式结束。然而，我不擅长用言语包裹浪漫情感，因此，请允许我用这样的方式说出心意。</span><br>-->
+                <!--                <span class="say">    过去的日子如同单调的方程，一切都是那样沉闷乏味，直到你这个变量出现，让这个方程充满了未知和可能。</span><br>-->
+                <!--                <span class="say">    你总说我们相识时间不够长，尚未完全了解对方。但我认为更重要的是，两颗心是否愿为对方付出。</span><br>-->
+                <!--                <span class="say">    在这段美好的时光里，我发现了你的活泼开朗，聆听了你的烦恼忧愁，感受到了你大大咧咧外表下那颗敏感的心。或许相识的时间还不够长，但每一个瞬间都让我更加确信，你是我生命中不可或缺的特别变数。</span><br>-->
+                <!--                <span class="say">  “初见乍惊欢，久处亦怦然”。期待未来与你一同编织属于我们的回忆。</span><br>-->
             </div>
-            
         </div>
-        <!-- 弹窗 -->
-        <div id="popup-container">
-            <p>愿意做我的女朋友吗？</p>
-            <button id="popup-btn">愿意</button>
+        <div id="clock-box">
+            <span class="STYLE1"></span><font color="#FFA5F0">呆妹，我喜欢你</font>
+            <span class="STYLE1">已经是……</span>
+            <div id="clock"></div>
         </div>
-        <style>
+        <canvas id="canvas" width="1100" height="680"></canvas>
+    </div>
+
+</div>
+<!-- 弹窗 -->
+<div id="popup-container">
+    <p>愿意做我的女朋友吗？</p>
+    <button id="popup-btn">愿意</button>
+</div>
+<style>
 
 
 
@@ -88,8 +118,9 @@
       cursor: pointer;
       font-size: 16px;
     }
-  </style>
-        <script>
+
+</style>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
       const popupContainer = document.getElementById('popup-container');
       const popupBtn = document.getElementById('popup-btn');
@@ -106,10 +137,11 @@
       // 调用 showPopup() 来展示弹窗
       setTimeout(showPopup, 50000);
     });
-  </script>
+
+</script>
 
 
-    <script>
+<script>
     (function(){
         var canvas = $('#canvas');
 		
@@ -264,4 +296,7 @@
 
         runAsync().start();
     })();
-    </script></body></html>
+
+</script>
+</body>
+</html>
